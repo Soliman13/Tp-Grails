@@ -28,6 +28,12 @@ class UserController {
             return
         }
 
+        println params
+        def file = request.getFile("thumbnail")
+        println file
+        file.transferTo(new File(grailsApplication.config.maconfig.assets_path+'image.png'))
+        user.thumbnail = new Illustration(filename: 'image.png')
+
         try {
             userService.save(user)
         } catch (ValidationException e) {

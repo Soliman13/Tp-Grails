@@ -19,15 +19,20 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <f:display bean="user" />
+%{--    <f:display bean="user" />--}%
     <f:field bean="user" property="username">
-        <g:textField name="${property}" value="${value}"/>
+        ${value}
     </f:field>
     <f:field bean="user" property="password">
-        <g:textField name="${property}" value="${value}"/>
+        ${value}
     </f:field>
     <f:field bean="user" property="thumbnail">
-        <g:textField name="${property}" value="${value}"/>
+        <img src="${user.thumbnail.filename}">
+    </f:field>
+    <f:field property="annonces">
+        <g:each in="${user.annonces}" var="annonce">
+            <li><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link> </li>
+        </g:each>
     </f:field>
 
     <g:form resource="${this.user}" method="DELETE">
