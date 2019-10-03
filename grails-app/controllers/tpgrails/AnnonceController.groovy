@@ -60,10 +60,10 @@ class AnnonceController {
 
 
         // on garde le fichier sur le site avec le path renseigné dans le fichier de config
-        println grailsApplication.config.maconfig.asset_path +'grails.png'
-        file.transferTo(new File(grailsApplication.config.maconfig.asset_path +'grails.png'))
+        println grailsApplication.config.maconfig.asset_path + params.title
+        file.transferTo(new File(grailsApplication.config.maconfig.asset_path + params.title))
         // garder une trace sur le nom du fichier
-        annonce.addToIllustrations(new Illustration(filename: 'image.png'))
+        annonce.addToIllustrations(new Illustration(filename: params.title))
 
         try {
             annonceService.save(annonce)

@@ -19,22 +19,34 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-%{--    <f:display bean="user" />--}%
-    <f:field bean="user" property="username">
-        ${value}
-    </f:field>
-    <f:field bean="user" property="password">
-        ${value}
-    </f:field>
-    <f:field bean="user" property="thumbnail">
-        <img src="${user.thumbnail.filename}">
-    </f:field>
-    <f:field property="annonces">
-        <g:each in="${user.annonces}" var="annonce">
-            <li><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link> </li>
-        </g:each>
-    </f:field>
+    <ol class="property-list user">
 
+        <li class="fieldcontain">
+            <span id="username-label" class="property-label">User Name</span>
+            <div class="property-value" aria-labelledby="username-label">${user.username}</div>
+        </li>
+
+        <li class="fieldcontain">
+            <span id="thumbnail-label" class="property-label">Thumbnail</span>
+            <div class="property-value" aria-labelledby="thumbnail-label">
+                <a href="/illustration/show/${user.thumbnail.id}">
+                    <img src="http://localhost:8081/assets/${user.thumbnail.filename}">
+                </a>
+            </div>
+        </li>
+
+        <li class="fieldcontain">
+            <span id="annonce-label" class="property-label">Annonce</span>
+            <div class="property-value" aria-labelledby="annonce-label">
+                <g:each in="${user.annonces}" var="annonce">
+                    <ul>
+                        <li><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link></li>
+                    </ul>
+                </g:each>
+            </div>
+        </li>
+
+    </ol>
     <g:form resource="${this.user}" method="DELETE">
         <fieldset class="buttons">
             <g:link class="edit" action="edit" resource="${this.user}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

@@ -37,7 +37,6 @@
                 <g:field type="file" name="thumbnail" id="thumbnail">
                 </g:field>
             </f:field>
-
         </fieldset>
         <fieldset class="buttons">
             <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

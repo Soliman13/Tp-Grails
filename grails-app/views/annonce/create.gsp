@@ -37,7 +37,8 @@
             <div class="fieldcontain required">
                 <label for="description">Description
                     <span class="required-indicator">*</span>
-                </label><input type="text" name="description" value="" required="" maxlength="20" id="description">
+                </label>
+                <input type="text" name="description" value="" required="" maxlength="20" id="description">
             </div>
             <div class="fieldcontain required">
                 <label for="validTill">Date de validité

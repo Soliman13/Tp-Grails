@@ -3,7 +3,7 @@ package tpgrails
 class BootStrap {
 
     def init = { servletContext ->
-        def userInstance = new User(username: "totorino", password: "password", thumbnail: new Illustration(filename: "thumb.png"))
+        def userInstance = new User(username: "totorino", password: "password", thumbnail: new Illustration(filename: "info.png"))
                 .save(flush: true, failOnError: true)
 
         (1..5).each {
@@ -14,9 +14,9 @@ class BootStrap {
                             validTill: new Date(),
                             state: Boolean.TRUE
                     )
-                            .addToIllustrations(new Illustration(filename: "filename"))
-                            .addToIllustrations(new Illustration(filename: "filename2"))
-                            .addToIllustrations(new Illustration(filename: "filename3"))
+                            .addToIllustrations(new Illustration(filename: "info.png"))
+                            .addToIllustrations(new Illustration(filename: "info.png"))
+                            .addToIllustrations(new Illustration(filename: "info.png"))
             )
             userInstance.save(flush: true, failOnError: true)
         }

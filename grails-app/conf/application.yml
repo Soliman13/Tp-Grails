@@ -138,5 +138,6 @@ environments:
         defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 
 maconfig:
-    asset_path: "C:/Users/loic/IdeaProjects/TP1/grails-app/assets/images/"
+#    asset_path: "C:/Users/loic/IdeaProjects/TP1/grails-app/assets/images/"
+    asset_path: "C:/Users/Soliman/Documents/Scolaire/Master2/Grails/tp1/tpgrails/grails-app/assets/images/"
     asset_url: "http://localhost:8080/assets/"

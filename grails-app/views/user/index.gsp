@@ -21,21 +21,19 @@
     <table>
         <thead>
         <tr>
-            <th class="sortable"><a href="/user/index?sort=username&amp;max=10&amp;order=asc">Username</a></th>
-            <th class="sortable"><a href="/user/index?sort=password&amp;max=10&amp;order=asc">Password</a></th>
-            <th class="sortable"><a href="/user/index?sort=thumbnail&amp;max=10&amp;order=asc">Thumbnail</a></th>
-            <th class="sortable"><a href="/user/index?sort=annonces&amp;max=10&amp;order=asc">Annonces</a></th>
+            <th class="sortable"><a href="/user/index.gsp?sort=username&amp;max=10&amp;order=asc">User Name</a></th>
+            <th class="sortable"><a href="/user/index.gsp?sort=thumbnail&amp;max=10&amp;order=asc">Thumbnail</a></th>
+            <th class="sortable"><a href="/user/index.gsp?sort=annonce&amp;max=10&amp;order=asc">Annonce</a></th>
         </tr>
         </thead>
         <g:each in="${userList}" var="instance">
             <tr>
                 <td><g:link controller="user" action="show" id="${instance.id}">${instance.username}</g:link></td>
-                <td></td>
-                <td><img src="${instance.thumbnail.filename}"/></td>
+                <td><img src="http://localhost:8080/assets/${instance.thumbnail.filename}" style="width: 150px; height: 150px"></td>
                 <td>
                     <ul>
                         <g:each in="${instance.annonces}" var="annonce">
-                            <li><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link> </li>
+                            <ul><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link></ul>
                         </g:each>
                     </ul>
                 </td>
