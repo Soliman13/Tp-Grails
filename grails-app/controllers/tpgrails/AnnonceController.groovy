@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class AnnonceController {
 
     AnnonceService annonceService
+    IllustrationService illustrationService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -17,16 +18,52 @@ class AnnonceController {
     def show(Long id) {
         respond annonceService.get(id)
     }
-
+    def showImage(Long id) {
+        respond illustrationService.get(id)
+    }
     def create() {
         respond new Annonce(params)
     }
 
+
+    // code non utilisé
+    def uploadImage(){
+        def file=request.getFile('image')
+        String imageUploadPath=grailsApplication.config.imageUpload.path
+        try{
+            if(file && !file.empty){
+                file.transferTo(new File("${imageUploadPath}/${file.name}"))
+                flash.message="Image enregistrée"
+            }
+            else{
+                flash.message="Image non enregistrée"
+            }
+        }
+        catch(Exception e){
+            log.error("Une erreur est survenue lors de l'upload de l'image",e)
+        }
+
+    }
+
     def save(Annonce annonce) {
+
+        println params
         if (annonce == null) {
             notFound()
             return
         }
+
+
+        //  def fichier = params.get("illustrations")
+        def file = request.getFile("file")
+        //générer un nom de fichier aléatoire et vérifier qu'il n'existe pas
+
+
+        // on garde le fichier sur le site avec le path renseigné dans le fichier de config
+        println grailsApplication.config.maconfig.asset_path +'grails.png'
+        file.transferTo(new File(grailsApplication.config.maconfig.asset_path +'grails.png'))
+        // garder une trace sur le nom du fichier
+        annonce.addToIllustrations(new Illustration(filename: 'image.png'))
 
         try {
             annonceService.save(annonce)
@@ -95,10 +132,5 @@ class AnnonceController {
             }
             '*'{ render status: NOT_FOUND }
         }
-    }
-
-    @Override
-    public String toString() {
-        return title
     }
 }

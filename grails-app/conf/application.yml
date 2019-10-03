@@ -136,3 +136,7 @@ environments:
         testOnReturn: false
         jdbcInterceptors: ConnectionState
         defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+maconfig:
+    asset_path: "C:/Users/loic/IdeaProjects/TP1/grails-app/assets/images/"
+    asset_url: "http://localhost:8080/assets/"
