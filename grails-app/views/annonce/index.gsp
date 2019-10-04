@@ -49,8 +49,8 @@
                     </ul>
                 </td>
                 <td>${instance.state}</td>
-                <td><g:link controller="annonce" action="show"
-                            id="${instance.author.username}">${instance.author.username}</g:link></td>
+                <td><g:link controller="user" action="show"
+                            id="${instance.author.id}">${instance.author.username}</g:link></td>
             </tr>
         </g:each>
     </table>

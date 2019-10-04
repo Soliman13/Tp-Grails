@@ -30,7 +30,7 @@
             <span id="thumbnail-label" class="property-label">Thumbnail</span>
             <div class="property-value" aria-labelledby="thumbnail-label">
                 <a href="/illustration/show/${user.thumbnail.id}">
-                    <img src="http://localhost:8081/assets/${user.thumbnail.filename}">
+                    <img src="http://localhost:8080/assets/${user.thumbnail.filename}" width="150" height="150">
                 </a>
             </div>
         </li>

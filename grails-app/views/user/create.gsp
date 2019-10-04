@@ -34,7 +34,7 @@
                 <f:input bean="user" property="password"></f:input>
             </f:field>
             <f:field bean="user" property="thumbnail">
-                <g:field type="file" name="thumbnail" id="thumbnail">
+                <g:field type="file" name="file" id="thumbnail">
                 </g:field>
             </f:field>
         </fieldset>

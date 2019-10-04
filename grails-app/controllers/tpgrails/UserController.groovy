@@ -29,9 +29,9 @@ class UserController {
         }
 
         println params
-        def file = request.getFile("thumbnail")
+        def file = request.getFile("file")
         println file
-        file.transferTo(new File(grailsApplication.config.maconfig.assets_path+'image.png'))
+        file.transferTo(new File(grailsApplication.config.maconfig.asset_path+'image.png'))
         user.thumbnail = new Illustration(filename: 'image.png')
 
         try {

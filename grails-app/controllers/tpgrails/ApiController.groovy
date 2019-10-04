@@ -26,13 +26,26 @@ class ApiController {
                 def annonceInstance= Annonce.get(params.id)
                 if (!annonceInstance)
                     return response.status= 404
-                Annonce ac = request.JSON.id
-                response.withFormat{
-                    xml{ render annonceInstance as XML}
-                    json{ render annonceInstance as JSON }
-                }
+                def ac = request.JSON
+
+                if (!ac.title|| !ac.description||!ac.validTill||!ac.state||ac.author)
+                    return response.status = 400
+
+                annonceInstance.properties=ac
+                annonceInstance.save(flush:true)
+                return response.status=200
                 break
             case "PATCH":
+                if (!params.id) {
+                    return response.status = 400
+                }
+                def annonceInstance = Annonce.get(params.id)
+                if (!annonceInstance)
+                    return response.status = 404
+                def ac = request.JSON
+                annonceInstance.properties=ac
+                annonceInstance.save(flush:true)
+                return response.status=200
                 break
             case "DELETE":
                 if (!params.id) {
