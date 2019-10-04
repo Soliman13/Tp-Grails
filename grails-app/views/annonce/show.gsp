@@ -47,7 +47,7 @@
             </li>
 
             <li class="fieldcontain">
-                <span id="illustration-label" class="property-label">Illustration</span>
+                <span id="illustration-label" class="property-label">Illustrations</span>
 
                 <div class="property-value" aria-labelledby="illustration-label">
                     <ul>
