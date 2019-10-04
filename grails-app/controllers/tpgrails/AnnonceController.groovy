@@ -25,7 +25,6 @@ class AnnonceController {
         respond new Annonce(params)
     }
 
-
     // code non utilisé
     def uploadImage(){
         def file=request.getFile('image')
@@ -53,11 +52,9 @@ class AnnonceController {
             return
         }
 
-
         //  def fichier = params.get("illustrations")
         def file = request.getFile("file")
         //générer un nom de fichier aléatoire et vérifier qu'il n'existe pas
-
 
         // on garde le fichier sur le site avec le path renseigné dans le fichier de config
         println grailsApplication.config.maconfig.asset_path + params.title
