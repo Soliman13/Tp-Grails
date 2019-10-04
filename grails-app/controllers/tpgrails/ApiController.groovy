@@ -2,7 +2,6 @@ package tpgrails
 
 import grails.converters.JSON
 import grails.converters.XML
-import org.apache.tools.ant.types.FileList
 
 class ApiController {
 
@@ -54,22 +53,13 @@ class ApiController {
                 }
                 break
             case "POST":
-                def type = request.getHeader("Accept")
-                def body
-                if(type.contains("XML")){
-                    body = request.XML
-                }
-                else {
-                    body = request.JSON
-                }
-
                 def file = request.getFile("illustration")
                 def author = User.get(params.author)
                 if(!author || !file)
                     return response.status = 400
 
                 def imageName = file.originalFilename
-                file.transferTo(new File(grailsAppapplication.config.maconfig.asset_path + imageName))
+                file.transferTo(new File(grailsApplication.config.maconfig.asset_path + imageName))
 
                 def annonceInstance = new Annonce(title: params.get("title"), description: params.get("description"),
                        validTill: params.get("validTill"), state: params.get("state"))
