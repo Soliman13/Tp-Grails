@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "80b74eef-3e65-4235-a218-5c0bd3a2ee8b",
+		"name": "TP GRAILS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/annonces",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "illustration",
+							"type": "file",
+							"src": "/C:/Users/Soliman/Pictures/ll.png"
+						},
+						{
+							"key": "title",
+							"value": "my title mannn",
+							"type": "text"
+						},
+						{
+							"key": "validTill",
+							"value": "2019-12-30",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "my description mannn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"annonces"
+					]
+				},
+				"description": "POST Request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/annonces",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "my title mannn",
+							"type": "text"
+						},
+						{
+							"key": "validTill",
+							"value": "2019-12-30",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "my description mannn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"annonces"
+					]
+				},
+				"description": "GET Request sur une annonce unique"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/annonce/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "my title mannn",
+							"type": "text"
+						},
+						{
+							"key": "validTill",
+							"value": "2019-12-30",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "my description mannn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"annonce",
+						"1"
+					]
+				},
+				"description": "DELETE Request sur une annonce unique"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/annonce/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "my title mannn",
+							"type": "text"
+						},
+						{
+							"key": "validTill",
+							"value": "2019-12-30",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "my description mannn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"annonce",
+						"1"
+					]
+				},
+				"description": "GET Request sur une annonce unique"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/annonce/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    title:\"PUT test\",\r\n    description:\"Cette request a réussi\",\r\n    validTill:\"2016-10-03 11:48:02.340 CEST\",\r\n    state:\"true\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"annonce",
+						"1"
+					]
+				},
+				"description": "PUT Request sur une annonce unique"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
